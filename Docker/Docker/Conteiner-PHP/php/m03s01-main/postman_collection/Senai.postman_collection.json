@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "03a20ae3-691d-4128-b0b1-7f4b3d0ba595",
+		"name": "Senai",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2706075"
+	},
+	"item": [
+		{
+			"name": "Hello World",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/hello-world",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"hello-world"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Videos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos"
+					],
+					"query": [
+						{
+							"key": "assunto",
+							"value": "tecnologia",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "assunto",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "2",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Video",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKYW1lcyBULiBLaXJrIiwiaXNzIjoiVGVjaFR1YmUiLCJpYXQiOjE2NTM2MTA3OTksImV4cCI6MTY1MzYxMjU5OX0.UEY_nhwm8Lm1c4cDg6jzYTl_e9q4kwSoRzZGIoh_76U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"http://www.oeutroviddfgdssgfeo6.com\",\n    \"assunto\": \"culinaria\",\n    \"usuario\": \"igor cavalera  2222\",\n    \"duracao\": \"20\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir Comentario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texto\": \"outro comentario do video\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/e03dcea3-6dee-4cba-9a7b-c2bd57b3f085/comentarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"e03dcea3-6dee-4cba-9a7b-c2bd57b3f085",
+						"comentarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Comentarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/33ef5feb-2a9b-47df-b2fb-eccaffa59fe8/comentarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"33ef5feb-2a9b-47df-b2fb-eccaffa59fe8",
+						"comentarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Comentario por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/e03dcea3-6dee-4cba-9a7b-c2bd57b3f085/comentarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"e03dcea3-6dee-4cba-9a7b-c2bd57b3f085",
+						"comentarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Video",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"http://www.mais_um_registro.com2\",\n    \"assunto\": \"culinária\",\n    \"usuario\": \"max cavalera\",\n    \"duracao\": \"25\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/ce63c99a-bb72-4a81-928f-5765a3112de3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"ce63c99a-bb72-4a81-928f-5765a3112de3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apagar Video",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJKYW1lcyBULiBLaXJrIiwiaXNzIjoiVGVjaFR1YmUiLCJpYXQiOjE2NTM2MTA3OTksImV4cCI6MTY1MzYxMjU5OX0.UEY_nhwm8Lm1c4cDg6jzYTl_e9q4kwSoRzZGIoh_76U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/c00df81f-a65d-4092-b0cd-3959acdce542",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"c00df81f-a65d-4092-b0cd-3959acdce542"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Video por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/95cd0f7d-372c-44c8-848b-571dfb7ceda5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"95cd0f7d-372c-44c8-848b-571dfb7ceda5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar Like",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/ce63c99a-bb72-4a81-928f-5765a3112de3/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"ce63c99a-bb72-4a81-928f-5765a3112de3",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retirar Like",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/videos/ce63c99a-bb72-4a81-928f-5765a3112de3/like",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"videos",
+						"ce63c99a-bb72-4a81-928f-5765a3112de3",
+						"like"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"james@kirk.com\",\n    \"senha\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/m03s01-1.0-SNAPSHOT/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"m03s01-1.0-SNAPSHOT",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
